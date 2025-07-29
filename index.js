@@ -16,7 +16,7 @@ const TOKEN = process.env.TOKEN;
 const CHANNEL_ID = process.env.CHANNEL_ID;
 const REQUIRED_ROLE_ID = process.env.REQUIRED_ROLE_ID;
 
-// グループとメンバー一覧（省略せず書いてるので長い）
+// グループとメンバー一覧
 const groupMembers = {
   "TWICE": ["Nayeon", "Jeongyeon", "Momo", "Sana", "Jihyo", "Mina", "Dahyun", "Chaeyoung", "Tzuyu"],
   "LE SSERAFIM": ["Kim Chaewon", "Sakura", "Huh Yunjin", "Kazuha", "Hong Eunchae"],
@@ -155,7 +155,9 @@ client.on('interactionCreate', async interaction => {
 
 client.login(TOKEN);
 
-// ExpressでPing対応（Render向け）
+// ✅ ExpressでPing対応（Render向け修正済み）
 const app = express();
 app.get('/', (_, res) => res.send('Bot is alive!'));
-app.listen(3000, () => console.log('✅ Webサーバー起動済み'));
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`✅ Webサーバー起動済み on port ${PORT}`));
