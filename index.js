@@ -1,3 +1,4 @@
+console.log("TOKEN:", process.env.TOKEN);
 require('dotenv').config();
 const { Client, GatewayIntentBits, ActionRowBuilder, ButtonBuilder, ButtonStyle, EmbedBuilder } = require('discord.js');
 const express = require('express');
