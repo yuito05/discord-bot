@@ -24,7 +24,7 @@ const client = new Client({
   ]
 });
 
-const TOKEN = process.env.TOKEN;
+
 const CHANNEL_ID = process.env.CHANNEL_ID;
 const REQUIRED_ROLE_ID = process.env.REQUIRED_ROLE_ID;
 
