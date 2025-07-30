@@ -161,7 +161,9 @@ client.on('interactionCreate', async interaction => {
   }
 });
 
-client.login(TOKEN);
+client.login(TOKEN).catch(err => {
+  console.error("❌ Discordログインエラー:", err);
+});
 
 // ✅ ExpressでPing対応（Render向け修正済み）
 const app = express();
